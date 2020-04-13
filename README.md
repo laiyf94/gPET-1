@@ -35,7 +35,7 @@ with CUDA version 10.0. The compilation should also work for CUDA version later 
 
 ```bash
 nvcc -dc *.cu
-nvcc *.o ./protect/*.o -o gPET
+nvcc *.o ./kernal/*.o -o gPET
 ```
 
 ### Execution
@@ -59,7 +59,7 @@ The gPET package is organized in the following structure:
 ```
 
 The main functions of the code files are as follows. “Constants.h” file defines global constants. “gPETInternal.h” defines all global variables used in the host while “gPET_kernals.h” defines that for the device. The “externCUDA.h” file gives all extern declarations. “gPET.h” file then defines all struct data types and declare functions for both host and device. “main.cu” file contains the main function of the package. “iniDevice.cu”, “initialize.cu” and “detector.cu” contain main initialization functions for device, source and phantom, and detector, respectively. “detector.cu” also defines some other functions related to the detector. In the “gPET.cu” file,  the simulation process is defined. All GPU kernel functions are then wrapped into the “gPET_kernals.o” file. 
-A simulation example for a small animal PET detector is given in this released version, with the specific configuration seen in the "input_PET.in"  text file.
+A simulation example for a small animal PET detector is given in this released version, with the specific configuration seen in the "input_PET.in"  text file. The general units for input of length, energy and time are cm, eV and s, respectively.
 
 ## Input file preparation
 
