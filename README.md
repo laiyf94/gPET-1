@@ -160,3 +160,9 @@ thresholder and upholder for energy window (in eV):
 30000 700000
 ```
 
+## Output
+The output file is a binary file, which is a list of the events. Events has structure of 
+int particle id,panel id,moddule id,crystal id,site id, event id;
+float deposited energy, local position x y z;
+double t, which is defined in the gPET.h. The data-wrting fuction outevents() is defined in the detector.cu.
+
